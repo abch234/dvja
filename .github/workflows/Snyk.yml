@@ -14,7 +14,7 @@ jobs:
          chmod +x snyk
          ls -lrt
          echo "----------Authenticating Snyk-----------"
-         ./snyk auth ${{secrets.Snyk_token}}
+         ./snyk auth ${{secrets.snyk_token}}
          echo "----------Snyk Scanning-----------"
          ./snyk test --all-projects -d
          
