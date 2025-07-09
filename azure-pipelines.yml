@@ -23,17 +23,7 @@ steps:
 
 - task: SnykSecurityScan@1
   inputs:
-    serviceConnectionEndpoint: 'Snykdevscops'
+    serviceConnectionEndpoint: 'Snyk'
     testType: 'app'
     monitorWhen: 'always'
     failOnIssues: false
-- task: releaseorchestrator@2
-  inputs:
-    endpointType: 'integrated'
-    projectName: 'Releasezap'
-    definitionName: 'New release pipeline'
-    releaseStrategy: 'create'
-    definitionStage: 'Securitytesting'
-    approvalRetry: 60
-    updateInterval: 5
-
